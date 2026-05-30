@@ -4,10 +4,8 @@ public class Main {
 
         BankAccount account = new BankAccount(1000);
 
-        System.out.println("Current Balance: Rs. " + account.getBalance());
+        ATM atm = new ATM(account);
 
-        account.deposit(500);
-
-        System.out.println("Balance After Deposit: Rs. " + account.getBalance());
+        atm.showMenu();
     }
 }
