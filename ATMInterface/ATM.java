@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class ATM {
@@ -27,11 +28,17 @@ public class ATM {
             switch (choice) {
 
                 case 1:
-                    System.out.println("Deposit feature coming soon.");
+                    System.out.print("Enter amount to deposit: ");
+                    double depositAmount = sc.nextDouble();
+
+                    account.deposit(depositAmount);
                     break;
 
                 case 2:
-                    System.out.println("Withdraw feature coming soon.");
+                    System.out.print("Enter amount to withdraw: ");
+                    double withdrawAmount = sc.nextDouble();
+
+                    account.withdraw(withdrawAmount);
                     break;
 
                 case 3:
