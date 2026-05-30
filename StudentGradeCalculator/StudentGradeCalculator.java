@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class StudentGradeCalculator {
@@ -20,6 +21,10 @@ public class StudentGradeCalculator {
         }
 
         System.out.println("Total Marks: " + totalMarks);
+
+        double percentage = (double) totalMarks / subjects;
+
+        System.out.println("Percentage: " + percentage + "%");
 
         sc.close();
     }
