@@ -10,7 +10,10 @@ public class NumberGame {
         Random random = new Random();
 
         int score = 0;
+        char playagain;
 
+        do { 
+            
         int number = random.nextInt(100) + 1;
         int guess = 0;
         int attempts = 0;
@@ -41,6 +44,11 @@ public class NumberGame {
             System.out.println("Game Over!");
             System.out.println("The correct number was: " + number);
         }
+
+        System.out.println("Do you want to play again? (Y/N): ");
+        playagain = sc.next().charAt(0);
+
+    }while (playagain == 'Y' || playagain == 'y');
 
         sc.close();
     }   
