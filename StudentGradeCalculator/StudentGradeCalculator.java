@@ -7,15 +7,33 @@ public class StudentGradeCalculator {
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.print("Enter number of subjects: ");
-        int subjects = sc.nextInt();
+        int subjects;
+
+        do {
+            System.out.print("Enter number of subjects (1-10): ");
+            subjects = sc.nextInt();
+
+            if (subjects < 1 || subjects > 10) {
+                System.out.println("Invalid number of subjects!");
+            }
+
+        } while (subjects < 1 || subjects > 10);
 
         int totalMarks = 0;
 
         for (int i = 1; i <= subjects; i++) {
 
-            System.out.print("Enter marks for subject " + i + ": ");
-            int marks = sc.nextInt();
+            int marks;
+
+            do {
+                System.out.print("Enter marks for subject " + i + " (0-100): ");
+                marks = sc.nextInt();
+
+                if (marks < 0 || marks > 100) {
+                    System.out.println("Marks must be between 0 and 100.");
+                }
+
+            } while (marks < 0 || marks > 100);
 
             totalMarks += marks;
         }
@@ -43,6 +61,9 @@ public class StudentGradeCalculator {
         }
 
         System.out.println("Grade: " + grade);
+
+        System.out.println("Maximum Possible Marks: " + (subjects * 100));
+        System.out.println("Marks Obtained: " + totalMarks);
 
         sc.close();
     }
