@@ -9,6 +9,8 @@ public class NumberGame {
         Scanner sc = new Scanner(System.in);
         Random random = new Random();
 
+        int score = 0;
+
         int number = random.nextInt(100) + 1;
         int guess = 0;
         int attempts = 0;
@@ -29,8 +31,10 @@ public class NumberGame {
             } else if (guess < number) {
                 System.out.println("Too low!");
             } else {
+                score++;
                 System.out.println("Congratulations!");
                 System.out.println("You guessed the number in " + attempts + " attempts.");
+                System.out.println("Score: " + score)   ;
             }
         }
         if (guess != number) {
@@ -39,5 +43,5 @@ public class NumberGame {
         }
 
         sc.close();
-    }
+    }   
 }
